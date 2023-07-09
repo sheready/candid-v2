@@ -1,4 +1,19 @@
-body {
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: myfrida;
+  src: url("./fonts/myfrida/MyfrideRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: myriad;
+  src: url("./fonts/myriad-pro-cufonfonts-webfont/MYRIADPRO-REGULAR.woff") format("woff");
+}
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +25,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
