@@ -17,9 +17,6 @@ const Header = () => {
             <a href="/join-the-movement" class="text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
           </div>
           {/* donate button hidden in smaller screen and shown in large screens as block */}
-          <a href='#' class="hidden font-myfrida md:block p-3 px-6 pt-2 text-white bg-dark-blue rounded-full baseline hover:bg-light-blue">
-            REGISTER
-          </a>
           <a href='#' class="hidden font-myfrida md:block p-3 px-6 pt-2 text-white bg-light-blue rounded-full baseline hover:bg-dark-blue">
             LOGIN
           </a>
