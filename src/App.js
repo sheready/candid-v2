@@ -2,6 +2,8 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/Home';
+import Circles from './components/Circles';
+import Sponsor from './components/Sponsor';
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/circles-of-trust" element={<Circles/>}  />
+        <Route path="/join-the-movement" element={<Sponsor/>} />
       </Routes>
 
     </div>
