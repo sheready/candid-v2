@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../media/events/banner2.jpg'
+import banner from '../media/circles/banner2.jpg'
 import img2 from '../media/icon.png'
 import img3 from '../media/circles/img1.jpg'
 import img4 from '../media/circles/img2.jpg'
@@ -9,25 +9,26 @@ import img7 from '../media/images/img5.jpg'
 import img8 from '../media/images/img15.jpg'
 import img9 from '../media/images/img10.jpg'
 import img10 from '../media/images/img12.JPG'
+import img11 from '../media/circles/img5.jpg'
 
 
 const Circles = () => {
   return (
     <div>
-      <section id='Hero'>
+      <section id='Hero'  class="mt-[20%] md:mt-[10%]">
             {/* flex container */}
             <div class="relative">
-            <img class="h-auto lg:h-[100vh] lg:w-[100vw]" src={banner}  alt='banner-image'></img>
+            <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
 
-            <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                <h1 class="w-full mt-3 text-3xl text-dark-blue lg:text-7xl md:text-black font-bold font-myfrida text-center md:text-[45px] md:text-left">
+            <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-2/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+                <h1 class="w-full mt-3 text-3xl text-dark-blue lg:text-7xl md:text-indigo font-bold font-myfrida text-center md:text-[45px] md:text-left">
                 CIRCLES OF TRUST        
                 </h1>
                 {/* <h5 class="max-w-md sm:mx-[4%] font-bold text-center font-myriad text-dark-blue md:text-indigo md:text-left md:ml-[10%] lg:mx-[10%] text-lg">
                 CIRCLES FOR WOMEN IN BUSINESS
                 </h5> */}
                 <div class="flex justify-center md:justify-center">
-                <a href='#' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[9%]">
+                <a href='#' class="p-3 px-6 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[9%]">
                     CREATE YOUR OWN CIRCLE
                 </a>
                 </div>
@@ -172,7 +173,7 @@ const Circles = () => {
           <img class="h-auto max-w-full rounded-lg" src={img3} alt=""/>
       </div>
       <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img4} alt=""/>
+          <img class="h-auto max-w-full rounded-lg" src={img11} alt=""/>
       </div>
       <div class="mr-2 mb-2">
           <img class="h-auto max-w-full rounded-lg" src={img5} alt=""/>
