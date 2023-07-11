@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../media/images/img25.JPG'
+import banner from '../media/circles/img2.jpg'
 import About from './About'
 import pot1 from '../media/gallery/pot1.jpg'
 import pot2 from '../media/gallery/pot2.jpg'
@@ -19,12 +19,12 @@ import land9 from '../media/gallery/land10.jpg'
 const Home = () => {
   return (
     <>
-      <section id='Hero'>
+      <section id='Hero' class="mt-[20%] lg:mt-[7%]">
         {/* flex container */}
         <div class="relative">
-          <img class="h-auto lg:h-[100vh] lg:w-[100vw]" src={banner}  alt='banner-image'></img>
+          <img class="h-auto lg:h-[65vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
 
-          <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+          <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2  md:top-1/2 lg:top-2/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
             <h1 class="w-full text-3xl font-bold font-myfrida text-center text-dark-blue md:text-indigo md:text-7xl md:text-left">
             CANDID CONVERSATIONS        
             </h1>
