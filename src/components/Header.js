@@ -53,10 +53,10 @@ const Header = () => {
             <a href="/join-the-movement" class="block lg:inline-block text-md lg:text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
             
           {/* donate button hidden in smaller screen and shown in large screens as block */}
-          <a href='#' class="p-1 px-4 mb-2 lg:mb-0 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue ">
+          <a href='/register' class="p-1 px-4 mb-2 lg:mb-0 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue ">
             BECOME A MEMBER
           </a>
-          <a href='#' class="p-1 px-4  font-myfrida text-white bg-light-blue rounded-full baseline hover:bg-dark-blue ">
+          <a href='/login' class="p-1 px-4  font-myfrida text-white bg-light-blue rounded-full baseline hover:bg-dark-blue ">
             LOGIN
           </a>
           </div>
