@@ -12,7 +12,7 @@ import img17 from '../media/sponsor/img10.JPG'
 const Sponsor = () => {
   return (
     <div>
-        <section id='Hero'  class="mt-[20%] md:mt-[10%]">
+        <section id='Hero'  class="mt-[20%] lg:mt-[7%]">
             {/* flex container */}
             <div class="relative">
                 <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
@@ -25,7 +25,7 @@ const Sponsor = () => {
         </section>  
         <div class="">
             <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
-            HOW TO JOIN AS A REGIONAL PATNER
+            HOW TO JOIN AS A REGIONAL PARTNER
             </h5>
             <p class="text-gray text-center md:mx-11 md:text-xl font-myriad">
                 This is an organization or company within a local area that has a pool of women in business as members and provide learning and networking opportunities for each other in one way or another.            
