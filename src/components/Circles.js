@@ -15,7 +15,7 @@ import img11 from '../media/circles/img5.jpg'
 const Circles = () => {
   return (
     <div>
-      <section id='Hero'  class="mt-[20%] md:mt-[10%]">
+      <section id='Hero'  class="mt-[20%] lg:mt-[7%] ">
             {/* flex container */}
             <div class="relative">
             <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
@@ -28,7 +28,7 @@ const Circles = () => {
                 CIRCLES FOR WOMEN IN BUSINESS
                 </h5> */}
                 <div class="flex justify-center md:justify-center">
-                <a href='#' class="p-3 px-6 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[9%]">
+                <a href='/create-your-own-circles' class="p-3 px-6 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[9%]">
                     CREATE YOUR OWN CIRCLE
                 </a>
                 </div>
