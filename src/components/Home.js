@@ -32,7 +32,7 @@ const Home = () => {
               CIRCLES FOR WOMEN IN BUSINESS
             </h5>
             <div class="flex justify-center md:justify-start">
-              <a href='#' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[2%]">
+              <a href='/register' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[2%]">
                 BECOME A MEMBER
               </a>
             </div>

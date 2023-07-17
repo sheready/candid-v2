@@ -16,7 +16,7 @@ import img20 from '../media/sponsor/img13.JPG'
 const Partner = () => {
   return (
     <div>
-        <section id='Hero'  class="mt-[20%] md:mt-[10%]">
+        <section id='Hero'  class="mt-[20%] lg:mt-[7%]">
     {/* flex container */}
             <div class="relative">
                 <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
