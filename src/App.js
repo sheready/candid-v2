@@ -9,6 +9,7 @@ import Partner from './components/Partner';
 import Login from './components/Login';
 import Register from './components/Register';
 import Member from './components/Member';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/partner" element={<Partner/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path='/profile' element={<Profile/>} />
         <Route path="/create-your-own-circles" element={<Member/>} />
       </Routes>
       <Footer/>
