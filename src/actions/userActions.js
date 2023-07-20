@@ -33,7 +33,7 @@ export const login = (email, password) => async (dispatch) => {
         }
 
         const {data} = await axios.post(
-            'https://candid-convo.herokuapp.com/users/login/',
+            'http://127.0.0.1:8000/users/login/',
             {'username': email, 'password':password},
             config
         )
@@ -74,10 +74,12 @@ export const register = (name, email, password) => async (dispatch) => {
         }
 
         const {data} = await axios.post(
-            'https://candid-convo.herokuapp.com/users/register/',
+            'http://127.0.0.1:8000/users/register/',
             {'name':name, 'email': email, 'password':password},
             config
         )
+
+        console.log(data)
 
         dispatch({
             type: USER_REGISTER_SUCCESS,
@@ -111,6 +113,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             userLogin: { userInfo },
         } = getState()
 
+
         const config = {
             headers:{
                 'Content-type': 'application/json',
@@ -119,9 +122,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const {data} = await axios.get(
-            `https://candid-convo.herokuapp.com/users/${id}/`,
+            `http://127.0.0.1:8000/users/${id}/`,
             config
         )
+
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -156,7 +160,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         }
 
         const {data} = await axios.put(
-            'https://candid-convo.herokuapp.com/users/profile/update/',
+            'http://127.0.0.1:8000/users/profile/update/',
             user,
             config
         )
