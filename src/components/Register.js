@@ -20,15 +20,11 @@ const Login = () => {
 
     const location = useLocation()
     const history = useNavigate()
+
     const redirect = location.search ? location.search.split('=')[1] : '/'
+
     const userRegister = useSelector(state => state.userRegister)
     const{error, loading, userInfo} = userRegister
-
-    useEffect(() => {
-        if(userInfo){
-            history(redirect)
-        }
-    }, [history, userInfo, redirect])
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -41,6 +37,13 @@ const Login = () => {
        
     }
 
+    useEffect(() => {
+        console.log(userInfo)
+        if(userInfo){
+            history(redirect)
+        }
+    }, [history, userInfo, redirect])
+
     return (
         <div class="min-h-screen">
             <h5 class="pt-4 font-bold text-center font-myfrida text-dark-blue md:mt-20 mt-[30%] lg:text-3xl">
@@ -52,14 +55,14 @@ const Login = () => {
                     {error && <Message>{error}</Message>}
                     {loading && <Loader/>}
                     <form class="" onSubmit={submitHandler}>
-                    <div class="mb-6">
+                        <div class="mb-6">
                             <label for="name" class="block mb-2 font-medium text-dark-blue">Full Name</label>
                             <input type="name" 
                             id="name" 
                             value={name} 
                             class="border border-light-blue rounded-lg block w-full p-2.5"
                             onChange={(e) => setName(e.target.value)}
-                            placeholder="Enter fullnames" required/>
+                            placeholder={userInfo.name}/>
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block mb-2 font-medium text-dark-blue">Email</label>
