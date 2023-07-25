@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {getUserDetails} from '../actions/userActions'
+import {getUserDetails, updateUserProfile} from '../actions/userActions'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 import Message from './Message'
 import Loader from './Loader'
 
@@ -13,14 +14,12 @@ const Profile = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState('')
-  const [image, setImage] = useState(defaultImageURL)
-  const [Location, setLocation] = useState('')
-  const [interest, setInterest] = useState('')
+  const [image_url, setImage] = useState('')
+  const [location, setLocation] = useState('')
+  const [interests, setInterest] = useState('')
 
   const dispatch = useDispatch()
-
-
-  const location = useLocation()
+  const Location = useLocation()
   const history = useNavigate()
 
   const userDetails = useSelector(state => state.userDetails)
@@ -28,44 +27,67 @@ const Profile = () => {
 
   const userLogin = useSelector(state => state.userLogin)
   const{userInfo} = userLogin
-  
-  console.log(userInfo)
-  const backendURL = 'http://127.0.0.1:8000'
-  
 
-  useEffect(() => {
-      if(!userInfo){
-        history('/login')
-      }else{
-        //check if user info is loaded
-        if(!user || !user.name){
-          //if we don't have it get that data
-          dispatch(getUserDetails('profile'))
-        }else{
-          setName(user.name)
-          setEmail(user.email)
-        }
-      }
-  }, [dispatch, history, userInfo, user])
+  const userUpdateProfile = useSelector(state => state.userUpdateProfile)
+  const{success} = userUpdateProfile
+  
+  const backendURL = 'http://127.0.0.1:8000'
+
 
   const submitHandler = (e) => {
-      e.preventDefault()
-
-      if(password !== confirmPassword){
-          setMessage('Password do not match')
-      }else{
-          console.log("updating")
-      }
-     
+    e.preventDefault()
+    if(password !== confirmPassword){
+        setMessage('Password do not match')
+    }else{
+      dispatch(updateUserProfile({
+        'id':user._id,
+        'name':name,
+        'email':email,
+        'password':password,
+        "profile": {
+          "location": location,
+          "interests": interests,
+          "image_url": image_url
+        }
+      }))
+    } 
   }
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0])
+  };
+
+  useEffect(() => {
+    if(!userInfo){
+      history('/login')
+    }else{
+      //check if user info is loaded
+      if(!user || !user.name || success){
+        dispatch({type:USER_UPDATE_PROFILE_RESET})
+        //if we don't have it get that data
+        dispatch(getUserDetails('profile'))
+      }else{
+        setName(user.name)
+        setEmail(user.email)
+        setInterest(user.profile.interests)
+        setImage(user.profile.image_url)
+        setLocation(user.profile.location)
+        
+      }
+    }
+  }, [dispatch, history, userInfo, user, success])
+
   return (
-    <div class='min-h-screen mt-[20%] md:mt-[7%]'>
-      <div class="flex flex-col md:flex-row container mx-auto">
-        <div class="flex flex-col md:w-1/4">
+    <div class='min-h-screen mx-auto mt-[30%] md:mt-[12%]'>
+        {message && <Message>{message}</Message>}
+        {error && <Message>{error}</Message>}
+        {loading && <Loader/>}
+      <div class="flex flex-col md:flex-row mx-auto">
+        <div class="flex flex-col mx-auto md:ml-[6%] md:w-1/4">
           <div class="md:mt-12 border-gray-200 dark:border-gray-700 rounded-lg">
             {userInfo.profile && userInfo.profile.image_url ? (
               <img
-                className="rounded-full w-46 h-46"
+                className="rounded-full h-24 w-24 md:h-48 md:w-48 md:ml-2"
                 src={backendURL + userInfo.profile.image_url}
                 alt="profile picture"
               />
@@ -75,102 +97,122 @@ const Profile = () => {
             )}
           </div>
         </div>
-        <div class="flex flex-col md:ml-3 md:w-3/4">
-          <div class="border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-            <div class="border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-              <h2 class="text-gray-900  text-3xl font-extrabold mb-2">Name: {userInfo.name}</h2>
-              <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Interest: {userInfo.profile.interests}</p>
-              <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Location: {userInfo.profile.location}</p>
-              <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Email: {userInfo.email}</p>
+        <div class="flex flex-col mx-auto md:ml-3 md:w-3/4">     
+        <form class="md:mr-[10%]" onSubmit={submitHandler}>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="text" 
+                  name="floating_name" 
+                  id="floating_name" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                  placeholder={userInfo.name} />
+                <label for="floating_name" 
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Name
+                </label>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row container mx-auto">
-        <div class="flex flex-col mt-2 md:w-1/4">
-          <div class="bg-indigo border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-            <img class="rounded-full w-96 h-96" src="" alt="profile picture"/>
-          </div>
-        </div>
-
-        <div class="flex flex-col mt-2 md:ml-3 md:w-3/4">
-          {message && <Message>{message}</Message>}
-          {error && <Message>{error}</Message>}
-          {loading && <Loader/>}
-          <form class="" onSubmit={submitHandler}>
-            <div class="mb-6">
-              <label for="name" class="block mb-2 font-medium text-dark-blue">Full Name</label>
-              <input type="name" 
-              id="name" 
-              value={name} 
-              class="border border-light-blue rounded-lg block w-full p-2.5"
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Enter fullnames"/>
-            </div>
-            <div class="mb-6">
-              <label for="email" class="block mb-2 font-medium text-dark-blue">Email</label>
+            <div class="relative z-0 w-full mb-6 group">
               <input type="email" 
-              id="email" 
-              value={email} 
-              class="border border-light-blue rounded-lg block w-full p-2.5"
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email@circles.com"/>
+                name="floating_email"  
+                id="floating_email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)}
+                class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                placeholder=" " />
+              <label for="floating_email" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Email address
+              </label>
             </div>
-            <div class="mb-6">
-              <label for="location" class="block mb-2 font-medium text-dark-blue">Location</label>
-              <input type="text" 
-              id="Location" 
-              value={Location} 
-              class="border border-light-blue rounded-lg block w-full p-2.5"
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Nairobi" required/>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="tel" 
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                  name="floating_phone" id="floating_phone" 
+                  class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                  placeholder=" "/>
+                <label for="floating_phone" 
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Phone number (123-456-7890)
+                </label>
             </div>
-            <div class="mb-6">
-              <label for="interest" class="block mb-2 font-medium text-dark-blue">Interests</label>
-              <input type="text" 
-              id="interest" 
-              value={interest} 
-              class="border border-light-blue rounded-lg block w-full p-2.5"
-              onChange={(e) => setInterest(e.target.value)}
-              placeholder="Finance, Fashion" required/>
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="text" 
+                  name="floating_location" 
+                  id="floating_location" 
+                  value={location} 
+                  onChange={(e) => setLocation(e.target.value)}
+                  class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                  placeholder=" " required />
+                <label for="floating_location" 
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Location
+                </label>
             </div>
-            <div class="mb-6">
-              <label for="image" class="block mb-2 font-medium text-dark-blue">Profile Image</label>
-              <input type="file" 
-              id="image_url" 
-              value={image} 
-              class="border border-light-blue rounded-lg block w-full p-2.5"
-              accept=".jpg, .jpeg .svg"
-              onChange={(e) => setImage(e.target.value)}
-              placeholder="upload image" required/>
-            </div>
-            <div class="mb-6">
-              <label for="password" class="block mb-2 font-medium text-dark-blue">Password</label>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
               <input type="password" 
-              id="password" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              class="border border-light-blue rounded-lg block w-full p-2.5" 
-              placeholder='Enter password'
-              />
+                name="floating_password" 
+                id="floating_password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                placeholder=" " />
+              <label for="floating_password" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Password
+              </label>
             </div>
-            <div class="mb-6">
-              <label for="passwordConfirm" class="block mb-2 font-medium text-dark-blue">Confirm Password</label>
+            <div class="relative z-0 w-full mb-6 group">
               <input type="password" 
-              id="passwordConfirm" 
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              class="border border-light-blue rounded-lg block w-full p-2.5" 
-              placeholder='Confirm password'
-              />
+                name="repeat_password" 
+                id="floating_repeat_password" 
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                placeholder=" "/>
+              <label for="floating_repeat_password" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Confirm password
+              </label>
             </div>
-            <button type="submit" 
-              class="mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">
-              Update profile
-            </button>        
-          </form>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type="text" 
+                name="floating_interests" 
+                id="floating_interests" 
+                value={interests}
+                onChange={(e) => setInterest(e.target.value)}
+                class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-light-blue peer" 
+                placeholder=" " required />
+              <label for="floating_interests" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Interests
+              </label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">             
+              <label class="block mb-2 text-sm font-medium " for="file_input">Upload file</label>
+              <input class="block w-full text-sm  border border-gray-300 rounded-lg cursor-pointer bg-light-blue focus:outline-none" 
+              value=""
+              accept=".jpg, .jpeg, .svg, .png"
+              onChange={(e) => {handleImageChange(e)}}
+              id="file_input" 
+              type="file"/>
+            </div>
+          </div>        
+          <button type="submit" 
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Update Profile
+          </button>
+        </form>
+
         </div>
-      </div>   
+      </div>  
     </div>  
 
   )
