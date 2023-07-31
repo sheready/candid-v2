@@ -13,7 +13,7 @@ const Footer = () => {
                         <a href="#" class="hover:underline hover:text-dark-blue">Membership</a>
                     </li>
                     <li class="mb-4">
-                        <a href="//circles-of-trust" class="hover:underline hover:text-dark-blue">Circles of Trust</a>
+                        <a href="/circles-of-trust" class="hover:underline hover:text-dark-blue">Circles of Trust</a>
                     </li>
                 </ul>
             </div>
