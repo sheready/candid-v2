@@ -14,7 +14,7 @@ const Profile = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState('')
-  const [image_url, setImage] = useState('')
+  const [image_url, setImage] = useState(defaultImageURL)
   const [location, setLocation] = useState('')
   const [interests, setInterest] = useState('')
 
@@ -34,24 +34,7 @@ const Profile = () => {
   const backendURL = 'http://127.0.0.1:8000'
 
 
-  const submitHandler = (e) => {
-    e.preventDefault()
-    if(password !== confirmPassword){
-        setMessage('Password do not match')
-    }else{
-      dispatch(updateUserProfile({
-        'id':user._id,
-        'name':name,
-        'email':email,
-        'password':password,
-        "profile": {
-          "location": location,
-          "interests": interests,
-          "image_url": image_url
-        }
-      }))
-    } 
-  }
+
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0])
@@ -62,8 +45,9 @@ const Profile = () => {
       history('/login')
     }else{
       //check if user info is loaded
-      if(!user || !user.name || success){
-        dispatch({type:USER_UPDATE_PROFILE_RESET})
+      // const loggedInUser = localStorage.getItem();
+      if(!user || !user.name || success || userInfo._id !== user._id){
+        dispatch({type: USER_UPDATE_PROFILE_RESET})
         //if we don't have it get that data
         dispatch(getUserDetails('profile'))
       }else{
@@ -76,6 +60,28 @@ const Profile = () => {
       }
     }
   }, [dispatch, history, userInfo, user, success])
+  console.log(userInfo)
+  const submitHandler = (e) => {
+    e.preventDefault()
+    if(password !== confirmPassword){
+      setMessage('Password do not match')
+    }else{
+      dispatch(updateUserProfile({
+        'id':user._id,
+        'name':name,
+        'email':email,
+        'password':password,
+        "profile": {
+          "location": location,
+          "interests": interests,
+          "image_url": image_url
+        }
+      },
+      userInfo.refresh
+      ))
+      setMessage('')
+    } 
+  }
 
   return (
     <div class='min-h-screen mx-auto mt-[30%] md:mt-[12%]'>
