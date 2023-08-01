@@ -3,6 +3,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {getUserDetails, updateUserProfile} from '../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
+import useSWR, { mutate } from 'swr';
 import Message from './Message'
 import Loader from './Loader'
 
@@ -30,16 +31,13 @@ const Profile = () => {
 
   const userUpdateProfile = useSelector(state => state.userUpdateProfile)
   const{success} = userUpdateProfile
-  
-  const backendURL = 'http://127.0.0.1:8000'
-
-
 
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0])
   };
 
+  
   useEffect(() => {
     if(!userInfo){
       history('/login')
@@ -60,7 +58,7 @@ const Profile = () => {
       }
     }
   }, [dispatch, history, userInfo, user, success])
-  console.log(userInfo)
+  
   const submitHandler = (e) => {
     e.preventDefault()
     if(password !== confirmPassword){
@@ -77,7 +75,7 @@ const Profile = () => {
           "image_url": image_url
         }
       },
-      userInfo.refresh
+      console.log(userInfo)
       ))
       setMessage('')
     } 
@@ -94,7 +92,7 @@ const Profile = () => {
             {userInfo.profile && userInfo.profile.image_url ? (
               <img
                 className="rounded-full h-24 w-24 md:h-48 md:w-48 md:ml-2"
-                src={backendURL + userInfo.profile.image_url}
+                src={userInfo.profile.image_url}
                 alt="profile picture"
               />
             ) : (

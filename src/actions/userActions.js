@@ -160,10 +160,11 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 
         const {data} = await axios.put(
             'http://127.0.0.1:8000/users/profile/update/',
+            userInfo,
             user,
             config
         )
-
+        console.log(data)
         
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
