@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Member from './components/Member';
 import Profile from './components/Profile';
+import Meru from './components/Meru';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/meru" element={<Meru />} />
         <Route path="/circles-of-trust" element={<Circles/>}  />
         <Route path="/join-the-movement" element={<Sponsor/>} />
         <Route path="/partner" element={<Partner/>} />

@@ -10,7 +10,7 @@ const Footer = () => {
                 <h2 class="mb-6 text-md font-bold uppercase text-dark-blue">Company</h2>
                 <ul class="text-gray font-medium">
                     <li class="mb-4">
-                        <a href="#" class="hover:underline hover:text-dark-blue">Membership</a>
+                        <a href="http://bit.ly/candidcoversations" class="hover:underline hover:text-dark-blue">Membership</a>
                     </li>
                     <li class="mb-4">
                         <a href="/circles-of-trust" class="hover:underline hover:text-dark-blue">Circles of Trust</a>
@@ -21,7 +21,7 @@ const Footer = () => {
                 <h2 class="mb-6 text-md font-bold uppercase text-dark-blue ">Help center</h2>
                 <ul class="text-gray font-medium">
                     <li class="mb-4">
-                        <a href="https://www.facebook.com/CirclesforWomenInBusiness" class="hover:underline hover:text-dark-blue">Instagram</a>
+                        <a href="https://www.instagram.com/circlesforwomeninbusiness/" class="hover:underline hover:text-dark-blue">Instagram</a>
                     </li>
                     <li class="mb-4">
                         <a href="https://www.facebook.com/CirclesforWomenInBusiness" class="hover:underline hover:text-dark-blue">Facebook</a>

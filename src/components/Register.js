@@ -16,8 +16,7 @@ const Login = () => {
     const [message, setMessage] = useState('')
 
     const dispatch = useDispatch()
-
-
+    
     const location = useLocation()
     const history = useNavigate()
 
@@ -33,12 +32,10 @@ const Login = () => {
             setMessage('Password do not match')
         }else{
             dispatch(register(name, email, password))
-        }
-       
+        }      
     }
 
     useEffect(() => {
-        console.log(userInfo)
         if(userInfo){
             history(redirect)
         }
@@ -50,7 +47,10 @@ const Login = () => {
                 REGISTER AS A MEMBER
             </h5>
             <div class="container flex flex-col px-4 mx-auto justify-center align-middle md:mt-10 mt-5 mb-4 space-y-12 md:space-y-0 md:flex-row min-h-screen">
-                <div class="flex flex-col space-y-6 md:w-3/4">
+                <div class="hidden md:flex md:flex-col md:w-1/2 ">
+                    <img src={loginimg} alt="login illustration" class="object-contain" />
+                </div>  
+                <div class="flex flex-col space-y-6 md:w-1/4 ">
                     {message && <Message>{message}</Message>}
                     {error && <Message>{error}</Message>}
                     {loading && <Loader/>}
@@ -62,7 +62,7 @@ const Login = () => {
                             value={name} 
                             class="border border-light-blue rounded-lg block w-full p-2.5"
                             onChange={(e) => setName(e.target.value)}
-                            placeholder={userInfo.name}/>
+                            placeholder="Jane Doe"/>
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block mb-2 font-medium text-dark-blue">Email</label>
@@ -96,16 +96,14 @@ const Login = () => {
                         <button type="submit" 
                         class="mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Become a member</button>        
                     </form>
-                    <h3 class="text-lg mb-3">Not a member yet?
+                    <h3 class="text-lg mb-3">Already a member?
                         <span>
                         <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} class="text-dark-blue font-bold"> Login here</Link>
                         </span>
                     </h3>
                     
                 </div>         
-                <div class="flex flex-col md:w-1/2">
-                    <img src={loginimg} alt="login illustration" class="object-contain" />
-                </div>                      
+                                  
             </div>
     </div>
     )

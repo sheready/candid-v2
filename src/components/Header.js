@@ -15,14 +15,18 @@ const Header = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   const userLogin = useSelector(state => state.userLogin)
   const {userInfo} = userLogin
-
+  // console.log(userInfo)
+  
   const dispatch = useDispatch()
 
   const logoutHandler = () => {
+   
     dispatch(logout())
   }
+
   return (
     <>
     <nav class="fixed top-0 z-10 w-full px-6 py-2 bg-white h-auto">
@@ -64,14 +68,17 @@ const Header = () => {
           isMenuOpen ? 'flex justify-end' : 'hidden'
         } flex-col items-end align-center lg:flex lg:flex-row lg:space-x-7 lg:mt-0`} >
             <a href="/" class="block lg:inline-block first-letter text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">HOME</a>
+            <a href="/meru" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">CANDID MERU</a>
             <a href="/circles-of-trust" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">CIRCLES</a>
             <a href="/partner" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN AS A PARTNER</a>
             <a href="/join-the-movement" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
-            
-          {/* donate button hidden in smaller screen and shown in large screens as block */}
+          
           {userInfo ? (
-            <>
-              <a href="#" onMouseOver={toggleDropdown} class="block lg:inline-block text-md first-letter text-md lg:text-lg font-myfrida hover:text-dark-blue">{userInfo.name}</a>
+            <>      
+              <a href="#" onMouseOver={toggleDropdown} class="block lg:inline-block text-[12px] lg:text-lg font-myfrida text-dark-blue">
+               <img src={userInfo?.profile?.image_url} class="h-8" alt="profile" />{userInfo?.name}
+              </a>
+              
               {isDropdownOpen && (
               <div class="z-10 absolute divide-y bg-white divide-gray-100 shadow lg:w-44 w-[25%] mt-6 lg:mt-0"
                 onMouseLeave={() => setIsDropdownOpen(false)}

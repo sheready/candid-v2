@@ -78,23 +78,20 @@ export const userDetailsReducer = (state = {user: {}}, action) => {
     }
 }
 
-const initialState = {
-    userInfo: null,
-    // Other state properties...
-  };
 
-export const userUpdateProfileReducer = (state = initialState, action) => {
+
+export const userUpdateProfileReducer = (state = { }, action) => {
   
     switch (action.type){
 
         case USER_UPDATE_PROFILE_REQUEST:
-            return {...state, loading: true}
+            return {loading: true}
         
         case USER_UPDATE_PROFILE_SUCCESS:
-            return {...state,  loading: false, success: true, userInfo: action.payload }
+            return {loading: false, success: true, userInfo: action.payload }
         
         case USER_UPDATE_PROFILE_FAIL:
-            return {...state,  loading: false, error: action.payload }
+            return {loading: false, error: action.payload }
         
         case USER_UPDATE_PROFILE_RESET:
             return state

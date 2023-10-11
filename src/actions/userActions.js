@@ -121,7 +121,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const {data} = await axios.get(
-            `http://127.0.0.1:8000/users/${id}/`,
+            `https://candid-backend-b6b80bdb2d90.herokuapp.com/users/${id}/`,
             config
         )
 
@@ -159,24 +159,33 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         }
 
         const {data} = await axios.put(
-            'http://127.0.0.1:8000/users/profile/update/',
-            userInfo,
+            'https://candid-backend-b6b80bdb2d90.herokuapp.com/users/profile/update/',
+            // userInfo,
             user,
             config
         )
-        console.log(data)
+    
+
+        const existingData = localStorage.getItem('userInfo') ? 
+        JSON.parse(localStorage.getItem('userInfo')) : {}
         
+        const {access, token, refresh} = existingData
+
+        const newData = {...data, access, token, refresh}
+
+            
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
-            payload:data
+            payload:newData
         })
         
         dispatch({
             type: USER_LOGIN_SUCCESS,
-            payload:data
+            payload:newData
         })
+    
 
-        localStorage.setItem('userInfo', JSON.stringify(data))
+        localStorage.setItem('userInfo', JSON.stringify(newData))
         
 
     } catch(error){
