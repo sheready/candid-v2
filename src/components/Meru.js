@@ -22,11 +22,11 @@ const Meru = () => {
             
                 <div class="relative h-48 overflow-hidden rounded-lg md:h-96">
                     
-                    <div class="hidden duration-700 ease-linear" data-carousel-item>
+                    <div class="duration-700 ease-linear" data-carousel-item>
                         <img src={banner1} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
                     </div>
                     
-                    <div class="hidden duration-700 ease-linear" data-carousel-item>
+                    <div class="duration-700 ease-linear" data-carousel-item>
                         <img src={banner2} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
                     </div>
                 </div>             
@@ -122,8 +122,8 @@ const Meru = () => {
                                 06:25 p.m
                             </p>
                             <h3 class="text-lg font-semibold font-myriad text-gray-900 ">
-                                <a href="#">Moderated conversation- Women and Money: Defining Financial Success</a>
-                                <p>Josephine Macharia</p>
+                                <a href="#">Women and Money: Defining Financial Success</a>
+                                <p>Moderator, Josephine Macharia</p>
                             </h3>
                             </div>
 
@@ -142,7 +142,7 @@ const Meru = () => {
                             </p>
                             <h3 class="text-lg font-semibold font-myriad text-gray-900 ">
                                 <a href="#">Vote of Thanks</a>
-                                <p>Patricia Okelo</p>
+                                <p>Community coordinator Candid Conversations, Brenda Ndirangu</p>
                             </h3>
                             </div>
 
@@ -159,10 +159,6 @@ const Meru = () => {
                     </div>
                 </section>
             </div>
-
-           
-
-
         </div>
         
 
