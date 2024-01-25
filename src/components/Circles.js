@@ -16,24 +16,19 @@ const Circles = () => {
   return (
     <div>
       <section id='Hero'  class="mt-[20%] lg:mt-[7%] ">
-            {/* flex container */}
-            <div class="relative">
-            <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
-
-            <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-2/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                <h1 class="w-full mt-3 text-3xl text-dark-blue lg:text-7xl md:text-indigo font-bold font-myfrida text-center md:text-[45px] md:text-left">
-                CIRCLES OF TRUST        
-                </h1>
-                {/* <h5 class="max-w-md sm:mx-[4%] font-bold text-center font-myriad text-dark-blue md:text-indigo md:text-left md:ml-[10%] lg:mx-[10%] text-lg">
-                CIRCLES FOR WOMEN IN BUSINESS
-                </h5> */}
-                <div class="flex justify-center md:justify-center">
-                <a href='/create-your-own-circles' class="p-3 px-6 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[9%]">
-                    CREATE YOUR OWN CIRCLE
+        <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
+            <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+              <h1 class="w-full text-3xl font-bold font-myfrida text-center text-indigo md:text-7xl md:text-left">
+              CIRCLES OF TRUST     
+              </h1>
+              <div class="flex justify-center md:justify-start">
+                <a href='#' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[2%]">
+                  CREATE A CIRCLE
                 </a>
-                </div>
+              </div>
             </div>
-        </div>
+        </section>
+            
     </section>
     <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
       <div class="flex flex-col space-y-10 md:space-y-5 md:mt-10 md:w-1/2">
@@ -168,7 +163,7 @@ const Circles = () => {
         </div>  
     </div>
 
-    <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
+    {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
       <div class="mr-2 mb-2">
           <img class="h-auto max-w-full rounded-lg" src={img3} alt=""/>
       </div>
@@ -181,7 +176,7 @@ const Circles = () => {
       <div class="mr-2 mb-2">
           <img class="h-auto max-w-full rounded-lg" src={img6} alt=""/>
       </div>
-    </div>
+    </div> */}
 
     <h5 class="pt-10 font-bold text-center mb-2 font-myfrida text-dark-blue md:text-xl">
       HOW TO BENEFIT MORE AS MEMBER?
@@ -257,7 +252,7 @@ const Circles = () => {
       </div>
     </div>
 
-    <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
+    {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
       <div class="mr-2 mb-2">
           <img class="h-auto max-w-full rounded-lg" src={img7} alt=""/>
       </div>
@@ -270,7 +265,7 @@ const Circles = () => {
       <div class="mr-2 mb-2">
           <img class="h-auto max-w-full rounded-lg" src={img10} alt=""/>
       </div>
-    </div>
+    </div> */}
 
     <h5 class="pt-10 font-bold text-center mb-2 font-myfrida text-dark-blue md:text-xl">
       HOW TO BUILD YOUR CIRCLE OF TRUST?
