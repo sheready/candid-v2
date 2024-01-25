@@ -68,8 +68,29 @@ const Header = () => {
           isMenuOpen ? 'flex justify-end' : 'hidden'
         } flex-col items-end align-center lg:flex lg:flex-row lg:space-x-7 lg:mt-0`} >
             <a href="/" class="block lg:inline-block first-letter text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">HOME</a>
-            <a href="/meru" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">CANDID MERU</a>
             <a href="/circles-of-trust" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">CIRCLES</a>
+            {/* Candid events dropdown */}
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-end  w-full py-2 px-3  md:p-0 md:w-auto text-[12px] lg:text-lg font-myfrida hover:text-dark-blue">Events 
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg>
+            </button>
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="/machakos" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">MACHAKOS 2023</a>
+                </li>
+                <li>
+                  <a href="/meru" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">MERU 2023</a>
+                </li>
+                <li>
+                  <a href="/kiambu" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">KIAMBU 2023</a>
+                </li>
+                <li>
+                  <a href="/kampala" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">KAMPALA 2023</a>
+                </li>
+              </ul>
+            </div>
             <a href="/partner" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN AS A PARTNER</a>
             <a href="/join-the-movement" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
           
