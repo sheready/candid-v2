@@ -23,9 +23,9 @@ const Meru = () => {
   return (
     <div>
         <section class="mt-[12%] md:mt-[7%] bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/Candid+Conversations+IMG_4066.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
-          <div class="px-4 mx-auto max-w-screen-xl text-center hidden md:block md:py-72 lg:py-56 xl:py-68">
-              <h1 class="mb-4 text-3xl font-myfrida tracking-tight leading-none text-indigo md:text-6xl lg:text-6xl">Machakos EDITION</h1>
-          </div>
+            <div class="px-4 mx-auto max-w-screen-xl text-center py-44 md:py-72 lg:py-56 xl:py-68">
+              <h1 class="mb-4 text-4xl font-myfrida tracking-tight leading-none text-indigo md:text-6xl lg:text-6xl">DEFINING FINANCIAL SUCCESS</h1>
+            </div>
         </section>
         <h4 class="font-myfrida text-dark-blue font-bold text-2xl text-center">About the Event</h4>
         <div class="container flex flex-col px-12 mx-auto mt-6 space-y-6  mb-4 md:space-x-2 md:space-y-0 md:flex-row">

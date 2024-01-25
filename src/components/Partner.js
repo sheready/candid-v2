@@ -17,15 +17,10 @@ const Partner = () => {
   return (
     <div>
         <section id='Hero'  class="mt-[20%] lg:mt-[7%]">
-    {/* flex container */}
-            <div class="relative">
-                <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
-                <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-2/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                    <h1 class="w-full mt-3 text-3xl text-dark-blue lg:text-7xl font-bold font-myfrida text-center md:text-indigo md:text-[45px] md:text-left">
-                    PARTNER WITH US        
-                    </h1>
+            <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
+                <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
                 </div>
-            </div>
+            </section>
         </section>
         <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
             HOW TO JOIN AS A RETAILER
@@ -88,7 +83,7 @@ const Partner = () => {
                 </div>
              </div>
         </div>
-        <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
+        {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
             <div class="mr-2 mb-2">
                 <img class="h-auto max-w-full rounded-lg" src={img3} alt=""/>
             </div>
@@ -101,7 +96,7 @@ const Partner = () => {
             <div class="mr-2 mb-2">
                 <img class="h-auto max-w-full rounded-lg" src={img7} alt=""/>
             </div>
-        </div>
+        </div> */}
         <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
             HOW TO JOIN AS A SPONSOR
         </h5>

@@ -13,25 +13,23 @@ const Sponsor = () => {
   return (
     <div>
         <section id='Hero'  class="mt-[20%] lg:mt-[7%]">
-            {/* flex container */}
-            <div class="relative">
-                <img class="h-auto lg:h-[50vh] lg:w-full object-cover" src={banner}  alt='banner-image'></img>
-                <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2 md:top-2/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                    <h1 class="w-full mt-3 text-3xl text-dark-blue lg:text-7xl font-bold font-myfrida text-center md:text-indigo md:text-[45px] md:text-left">
-                    JOIN THE MOVEMENT        
-                    </h1>
+            <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
+                <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+                <h1 class="w-full text-3xl font-bold font-myfrida text-center text-indigo md:text-7xl md:text-left">
+                    PARTNERSHIP     
+                </h1>
                 </div>
-            </div>
+            </section>
         </section>  
         <div class="">
             <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
             HOW TO JOIN AS A REGIONAL PARTNER
             </h5>
-            <p class="text-gray text-center md:mx-11 md:text-xl font-myriad">
+            <p class="text-gray text-left md:mx-11 md:text-xl font-myriad">
                 This is an organization or company within a local area that has a pool of women in business as members and provide learning and networking opportunities for each other in one way or another.            
             </p>
             <br></br>
-            <p class="text-gray text-center md:text-xl font-myriad">
+            <p class="text-gray text-left md:text-xl md:mx-11 font-myriad">
                 A regional partner will be supported by the head office.
             </p>
 
@@ -80,7 +78,7 @@ const Sponsor = () => {
                     </div> 
                 </div>
             </div>
-            <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
+            {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
                 <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img8} alt=""/>
                 </div>
@@ -93,7 +91,7 @@ const Sponsor = () => {
                 <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img11} alt=""/>
                 </div> */}
-            </div>
+            {/* </div> */}
             <div class="container flex flex-col mx-auto  space-y-12  md:flex-row">
                 <div class="flex flex-col align-center justify-center space-y-10 md:space-y-5 md:mt-10 md:w-1/2">
                     <p class="font-myriad font-bold text-dark-blue md:text-xl text-center md:text-left">
@@ -202,12 +200,12 @@ const Sponsor = () => {
                 </div>
             </div>
             <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
-                <div class="mr-2 mb-2">
+                {/* <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img12} alt=""/>
                 </div>
                 <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img13} alt=""/>
-                </div>
+                </div> */}
                 {/* <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img14} alt=""/>
                 </div>
@@ -299,12 +297,12 @@ const Sponsor = () => {
                 </div>
             </div>
             <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
-                <div class="mr-2 mb-2">
+                {/* <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img16} alt=""/>
                 </div>
                 <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img17} alt=""/>
-                </div>
+                </div> */}
                 {/* <div class="mr-2 mb-2">
                     <img class="h-auto max-w-full rounded-lg" src={img18} alt=""/>
                 </div>
