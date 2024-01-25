@@ -1,30 +1,79 @@
 import React from 'react'
+import pot1 from '../media/kampala/53147798189_2a0047d390_c.jpg'
+import pot2 from '../media/kampala/53146995717_46612013b6_c.jpg'
+import pot3 from '../media/kampala/53147571536_07158e6ef3_c.jpg'
+import pot4 from '../media/kampala/53147590741_320070f0ee_k.jpg'
+import land1 from '../media/kampala/53147016967_3fb1f6bf80_c.jpg'
+import land3 from '../media/kampala/53147591426_99a71d1f8c_c.jpg'
+import land4 from '../media/kampala/53147804444_76ccb9e2fe_c.jpg'
+import land5 from '../media/kampala/53148004435_f7bb34dc0e_c.jpg'
+import land6 from '../media/kampala/53148094953_de7c2e983f_c.jpg'
+import land7 from '../media/kampala/53148075113_c4274bc1ba_c.jpg'
+import land8 from '../media/kampala/53147584631_c923d824d0_c.jpg'
+import land9 from '../media/kampala/53147786049_baa961de88_c.jpg'
 
 const Uganda = () => {
   return (
     <div>
-      <section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
-          <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-              <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We invest in the world’s potential</h1>
-              <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-              <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                  <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                      Get started
-                      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                      </svg>
-                  </a>
-                  <a href="#" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
-                      Learn more
-                  </a>  
-              </div>
+      <section class="mt-[12%] md:mt-[7%] bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/53147000502_a90ce9918d_c.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
+          <div class="px-4 mx-auto max-w-screen-xl text-center hidden md:block md:py-72 lg:py-56 xl:py-72">
+              <h1 class="mb-4 text-3xl font-myfrida tracking-tight leading-none text-indigo md:text-6xl lg:text-6xl">UGANDA EDITION</h1>
           </div>
       </section>
+      <h5 class="pt-4 font-bold text-center font-myfrida text-dark-blue text-2xl">
+        HIGHLIGHTS
+      </h5>
+      <div class="grid mt-6 m-4 grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="grid gap-4">
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={pot1} alt=""/>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land1} alt=""></img>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land9} alt=""></img>
+          </div>
+          </div>
+          <div class="grid gap-4">
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land8} alt=""></img>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={pot2} alt=""></img>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land3} alt=""></img>
+          </div>
+          </div>
+          <div class="grid gap-4">
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={pot3} alt=""></img>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land4} alt=""></img>
+          </div>
+          <div>
+              <img class="h-auto max-w-full rounded-lg" src={land5} alt=""></img>
+          </div>
+          </div>
+          <div class="grid gap-4">
+              <div>
+              <img class="h-auto max-w-full rounded-lg" src={land6} alt=""></img>
+              </div>
+              <div>
+              <img class="h-auto max-w-full rounded-lg" src={pot4} alt=""></img>
+              </div>
+              <div>
+              <img class="h-auto max-w-full rounded-lg" src={land7} alt=""></img>
+              </div>
+          </div>
+        </div>
 
     </div>
   )
 }
 
-export default Uganda
+export default Uganda;
 
 
