@@ -34,8 +34,8 @@ const About = () => {
             <p class="mb-1 font-normal text-center text-myriad text-dark-blue ">After every event women should leave feeling heard, with hope, equipped with immediate action plans and where possible a set of new friends.</p>
         </div>
     </div>
-    <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-2xl">
-        WHICH ARE SOME OF OUR PAST EVENTS?
+    {/* <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-2xl">
+        SOME OF OUR PAST EVENTS
     </h5>
     <div class="container flex flex-col justify-center px-4 mx-auto mt-5 space-y-8 lg:space-y-0 lg:flex-row">     
         <div class="flex flex-col rounded-lg lg:mr-2">
@@ -56,7 +56,7 @@ const About = () => {
         <div class="flex flex-col rounded-lg lg:mr-2">
             <img src={img6} alt="event-6" />
         </div>
-    </div> 
+    </div>  */}
     </>
   )
 }
