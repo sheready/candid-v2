@@ -21,11 +21,11 @@ const Home = () => {
     <>
       <section id='Hero' class="mt-[20%] lg:mt-[7%]">
         <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
-            <div class="flex flex-col space-y-5 md:absolute md:mb-10 left-1/2  md:top-1/2 lg:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-              <h1 class="w-full text-3xl font-bold font-myfrida text-center text-dark-blue md:text-indigo md:text-7xl md:text-left">
+            <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+              <h1 class="w-full text-3xl font-bold font-myfrida text-center text-indigo md:text-7xl md:text-left">
               CANDID CONVERSATIONS        
               </h1>
-              <h5 class="w-full sm:mx-[4%] font-bold text-center font-myriad text-dark-blue md:text-indigo md:text-left md:ml-[10%] lg:mx-[2%] lg:text-2xl text-lg">
+              <h5 class="w-full sm:mx-[4%] font-bold text-center font-myriad text-indigo md:text-left md:ml-[10%] lg:mx-[2%] lg:text-2xl text-lg">
                 CIRCLES FOR WOMEN IN BUSINESS
               </h5>
               <div class="flex justify-center md:justify-start">
@@ -41,7 +41,7 @@ const Home = () => {
       </section>
       <About/>
       <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-2xl">
-        IMAGES FROM CANDID CONVERSATION 2023
+        2023 HIGHLIGHTS
       </h5>
       <div class="grid mt-6 mx-4 grid-cols-2 md:grid-cols-4 gap-4">
         <div class="grid gap-4">
