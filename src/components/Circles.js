@@ -16,19 +16,19 @@ const Circles = () => {
   return (
     <div>
       <section id='Hero'  class="mt-[20%] lg:mt-[7%] ">
-        <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
-            <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-              <h1 class="w-full text-3xl font-bold font-myfrida text-center text-indigo md:text-7xl md:text-left">
-              CIRCLES OF TRUST     
-              </h1>
-              <div class="flex justify-center md:justify-start">
-                <a href='#' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[2%]">
+      <section class="bg-center bg-no-repeat bg-[url('/home/stella/Documents/projects/Candid/candid-v2/candid-v2/src/media/kiambu/3.JPG')] bg-gray-400 bg-blend-multiply bg-cover">
+          <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+              <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-indigo font-myfrida md:text-5xl lg:text-7xl">Circles of trust </h1>
+             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <a href="/register" class="inline-flex justify-center font-myfrida items-center py-3 px-5 mx-16 md:mx-0 text-lg font-medium text-center rounded-lg bg-light-blue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                   CREATE A CIRCLE
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
                 </a>
               </div>
-            </div>
-        </section>
-            
+          </div>
+      </section>       
     </section>
     <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
       <div class="flex flex-col space-y-10 md:space-y-5 md:mt-10 md:w-1/2">
@@ -163,50 +163,32 @@ const Circles = () => {
         </div>  
     </div>
 
-    {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img3} alt=""/>
+    <div className='grid grid-cols-1 md:grid-cols-2 my-2 md:mt-14'>
+      <div>
+        <img src={img5} className=''/>
       </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img11} alt=""/>
-      </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img5} alt=""/>
-      </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img6} alt=""/>
-      </div>
-    </div> */}
-
-    <h5 class="pt-10 font-bold text-center mb-2 font-myfrida text-dark-blue md:text-xl">
-      HOW TO BENEFIT MORE AS MEMBER?
-    </h5>
-    <div class="container flex flex-col px mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
-      <div class="flex flex-col space-y-10 md:space-y-5 md:mt-10 md:w-1/2">
-        <h5 class="max-w-md font-myriad md:text-xl font-bold text-dark-blue text-center md:text-left">
-        Becoming a member of Candid Conversations opens you up to authentic conversations. 
-        We believe that by presenting our authentic selves we are better able to:
-        </h5> 
-      </div>
-      <div class="flex flex-col space-y-6 ml-6 md:w-3/4">
+      <div>
+        <h5 class="text-left mb-2 text-lg font-myfrida text-dark-blue mx-14 md:text-2xl">
+          BENEFITS OF BEING IN A CIRCLE OF TRUST
+        </h5>
         {/* list Item 1 */}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
         {/* Heading */}
           <div class="rounded-l-full ">
             <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
+              <img src={img2} class="h-6 w-6 ml-2"/>
               <p class="text-gray">
-              Position our businesses to solve real problems
+              Position your businesses to solve real problems
               </p>
             </div>
           </div>                
         </div> 
         {/* list Item 2 */}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
         {/* Heading */}
           <div class="rounded-l-full ">
             <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
+              <img src={img2} class="h-6 w-6 ml-2"/>
               <p class="text-gray">
               Become effective business leaders
               </p>
@@ -214,23 +196,23 @@ const Circles = () => {
           </div>                
         </div> 
         {/* list Item 3*/}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
         {/* Heading */}
           <div class="rounded-l-full ">
             <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
+              <img src={img2} class="h-6 w-6 ml-2"/>
               <p class="text-gray">
               Grow our networks
               </p>
             </div>
           </div>                
         </div> 
-        {/* list Item 4*/}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+          {/* list Item 4*/}
+          <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
         {/* Heading */}
           <div class="rounded-l-full ">
             <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
+              <img src={img2} class="h-6 w-6 ml-2"/>
               <p class="text-gray">
               Encourage each other to create businesses that will last for posterity
               </p>
@@ -238,105 +220,69 @@ const Circles = () => {
           </div>                
         </div> 
         {/* list Item 5*/}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
         {/* Heading */}
           <div class="rounded-l-full ">
             <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
+              <img src={img2} class="h-6 w-6 ml-2"/>
               <p class="text-gray">
               Create a support system that will walk alongside us as we build our businesses
               </p>
             </div>
           </div>                
         </div> 
-      </div>
-    </div>
+        <h5 class="text-left mb-2 text-lg font-myfrida text-dark-blue mx-14 md:text-2xl">
+          HOW TO BUILD YOUR CIRCLE OF TRUST?
+        </h5>
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
+        {/* Heading */}
+          <div class="rounded-l-full ">
+            <div class="flex items-center space-x-2">
+              <img src={img2} class="h-6 w-6 ml-2"/>
+              <div>
+                <h3 class="text-base font-myfrida text-dark-blue">
+                  Experts
+                </h3>
+                <p class="text-gray">
+                Individuals with mastery in an area/subject you need to learn more about.
+                </p>
+              </div>
+            </div>
+          </div>                
+        </div> 
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
+        {/* Heading */}
+          <div class="rounded-l-full ">
+            <div class="flex items-center space-x-2">
+              <img src={img2} class="h-6 w-6 ml-2"/>
+              <div>
+                <h3 class="text-base font-myfrida text-dark-blue">
+                  Peers
+                </h3>
+                <p class="text-gray">
+                Trusted colleagues or friends who you can open up to and who have your back
+                </p>
+              </div>
+            </div>
+          </div>                
+        </div> 
+        <div class="flex flex-col space-y-3 mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
+        {/* Heading */}
+          <div class="rounded-l-full ">
+            <div class="flex items-center space-x-2">
+              <img src={img2} class="h-6 w-6 ml-2"/>
+              <div>
+                <h3 class="text-base font-myfrida text-dark-blue">
+                  Mentors
+                </h3>
+                <p class="text-gray">
+                  Someone with more experience than you, who can share and guide you.
+                </p>
+              </div>
+            </div>
+          </div>                
+        </div> 
 
-    {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img7} alt=""/>
-      </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img8} alt=""/>
-      </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img9} alt=""/>
-      </div>
-      <div class="mr-2 mb-2">
-          <img class="h-auto max-w-full rounded-lg" src={img10} alt=""/>
-      </div>
-    </div> */}
-
-    <h5 class="pt-10 font-bold text-center mb-2 font-myfrida text-dark-blue md:text-xl">
-      HOW TO BUILD YOUR CIRCLE OF TRUST?
-    </h5>
-    <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
-      <div class="flex flex-col space-y-10 md:space-y-5 md:mt-10 md:w-1/2">
-        <h5 class="max-w-md font-myriad md:text-xl font-bold text-dark-blue text-center md:text-left">
-        When selecting the type of individuals to have in your circle of trust, aim to have the following individuals:
-        </h5> 
-      </div>
-      <div class="flex flex-col space-y-6 ml-6 md:w-3/4">
-        {/* list Item 1 */}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
-        {/* Heading */}
-          <div class="rounded-l-full bg-lightest-blue md:bg-transparent">
-            <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-              <h3 class="text-base font-myfrida md:mb-4 md:hidden">
-                Experts
-              </h3>
-            </div>
-          </div>
-          <div class="text-left">
-            <h3 class='hidden mb-4 text-lg text-dark-blue font-myfrida md:block'>
-              Experts
-            </h3>
-            <p class="text-gray">
-            Individuals with mastery in an area/subject you need to learn more about.
-            </p>
-          </div>                   
-        </div> 
-        {/* list Item 2 */}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
-        {/* Heading */}
-          <div class="rounded-l-full bg-lightest-blue md:bg-transparent">
-            <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-              <h3 class="text-base font-myfrida md:mb-4 md:hidden">
-                Peers
-              </h3>
-            </div>
-          </div>
-          <div class="text-left">
-            <h3 class='hidden mb-4 text-lg text-dark-blue font-myfrida md:block'>
-              Peers
-            </h3>
-            <p class="text-gray">
-              Trusted colleagues or friends who you can open up to and who have your back
-            </p>
-          </div>                   
-        </div> 
-        {/* list Item 2 */}
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
-        {/* Heading */}
-          <div class="rounded-l-full bg-lightest-blue md:bg-transparent">
-            <div class="flex items-center space-x-2">
-              <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-              <h3 class="text-base font-myfrida md:mb-4 md:hidden">
-                Mentors
-              </h3>
-            </div>
-          </div>
-          <div class="text-left">
-            <h3 class='hidden mb-4 text-lg text-dark-blue font-myfrida md:block'>
-              Mentors
-            </h3>
-            <p class="text-gray">
-              Someone senior to you, who can share her experience.
-            </p>
-          </div>                   
-        </div> 
       </div>
     </div>
 

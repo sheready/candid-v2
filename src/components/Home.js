@@ -19,28 +19,22 @@ import land9 from '../media/gallery/land10.jpg'
 const Home = () => {
   return (
     <>
-      <section id='Hero' class="mt-[20%] lg:mt-[7%]">
-        <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
-            <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-              <h1 class="w-full text-3xl font-bold font-myfrida text-center text-indigo md:text-7xl md:text-left">
-              CANDID CONVERSATIONS        
-              </h1>
-              <h5 class="w-full sm:mx-[4%] font-bold text-center font-myriad text-indigo md:text-left md:ml-[10%] lg:mx-[2%] lg:text-2xl text-lg">
-                CIRCLES FOR WOMEN IN BUSINESS
-              </h5>
-              <div class="flex justify-center md:justify-start">
-                <a href='/register' class="p-3 px-4 pt-2 sm:mr-[8%] md:mr-6 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue md:ml-[10%] lg:mx-[2%]">
-                  BECOME A MEMBER
-                </a>
+      <section class="bg-center mt-14 bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/69.JPG')] bg-gray-500 bg-blend-multiply bg-cover">
+          <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+              <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-indigo font-myfrida md:text-5xl lg:text-7xl">CANDID CONVERSATIONS </h1>
+              <p class="mb-8 text-lg font-normal text-indigo font-myriad lg:text-2xl sm:px-16 lg:px-48">CIRCLES FOR WOMEN IN BUSINESS</p>
+              <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                  <a href="/register" class="inline-flex justify-center font-myfrida items-center py-3 px-5 mx-16 md:mx-0 text-lg font-medium text-center rounded-lg bg-light-blue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    BECOME A MEMBER
+                      <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                      </svg>
+                  </a>
               </div>
-            </div>
-        </section>
-        {/* flex container */}
-        
-
+          </div>
       </section>
       <About/>
-      <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-2xl">
+      <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-2xl lg:text-3xl">
         2023 HIGHLIGHTS
       </h5>
       <div class="grid mt-6 mx-4 grid-cols-2 md:grid-cols-4 gap-4">
