@@ -5,132 +5,59 @@ import { logout } from '../actions/userActions'
 
 
 const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const handleToggleClick = () => {
+    const megaMenu = document.getElementById('mega-menu-full');
+    const button = document.querySelector('[data-collapse-toggle="mega-menu-full"]');
 
-  const handleMenuClick = () => {
-    setMenuOpen(!isMenuOpen);
+    // Toggle the aria-expanded attribute
+    const isExpanded = megaMenu.getAttribute('aria-expanded') === 'true';
+    megaMenu.setAttribute('aria-expanded', !isExpanded);
+
+    // Toggle the visibility of the mega menu
+    megaMenu.classList.toggle('hidden');
+
+    // Update the button's aria-expanded attribute
+    button.setAttribute('aria-expanded', !isExpanded);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const userLogin = useSelector(state => state.userLogin)
-  const {userInfo} = userLogin
-  // console.log(userInfo)
-  
-  const dispatch = useDispatch()
-
-  const logoutHandler = () => {
-   
-    dispatch(logout())
-  }
 
   return (
     <>
-    <nav class="fixed top-0 z-10 w-full px-6 py-2 bg-white h-auto">
-        <div class="flex container mx-auto items-center justify-between">
-          {/* logo */}
-          <div class="h-[80px] w-[80px]">
-            <img src={logo} alt="candid-logo"></img>
-          </div>
-          <button
-          className="lg:hidden focus:outline-none"
-          onClick={handleMenuClick}
-          aria-label="Open Menu"
-        >
-          <svg
-            className="w-12 h-10 hover:text-dark-blue"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={3}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={3}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-          {/* menu items display after medium screen else hide the items */}
-          <div className={`${
-          isMenuOpen ? 'flex justify-end' : 'hidden'
-        } flex-col items-end align-center lg:flex lg:flex-row lg:space-x-7 lg:mt-0`} >
-            <a href="/" class="block lg:inline-block first-letter text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">HOME</a>
-            <a href="/circles-of-trust" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">CIRCLES</a>
-            {/* Candid events dropdown */}
-            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-end  w-full py-2 px-3  md:p-0 md:w-auto text-[12px] lg:text-lg font-myfrida hover:text-dark-blue">Events 
-              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+      <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src={logo} class="h-24" alt="Candid Logo" />           
+          </a>
+          <button data-collapse-toggle="mega-menu-full" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-full" aria-expanded="false" onClick={handleToggleClick}>
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
               </svg>
-            </button>
-            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-              <ul class="py-2" aria-labelledby="dropdownLargeButton">
-                <li>
-                  <a href="/machakos" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">MACHAKOS 2023</a>
-                </li>
-                <li>
-                  <a href="/meru" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">MERU 2023</a>
-                </li>
-                <li>
-                  <a href="/kiambu" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">KIAMBU 2023</a>
-                </li>
-                <li>
-                  <a href="/kampala" class="block px-4 py-2 lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">KAMPALA 2023</a>
-                </li>
-              </ul>
-            </div>
-            <a href="/partner" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN AS A PARTNER</a>
-            <a href="/join-the-movement" class="block lg:inline-block text-[12px] lg:text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
-          
-          {userInfo ? (
-            <>      
-              <a href="#" onMouseOver={toggleDropdown} class="block lg:inline-block text-[12px] lg:text-lg font-myfrida text-dark-blue">
-               <img src={userInfo?.profile?.image_url} class="h-8" alt="profile" />{userInfo?.name}
-              </a>
-              
-              {isDropdownOpen && (
-              <div class="z-10 absolute divide-y bg-white divide-gray-100 shadow lg:w-44 w-[25%] mt-6 lg:mt-0"
-                onMouseLeave={() => setIsDropdownOpen(false)}
-                style={{ top: '70%', right: '0' }}
-              >
-                <ul class="py-2 text-sm" aria-labelledby="dropdownDelayButton">
-                  <li>
-                    <a href="/profile" class="block lg:inline-block text-md ml-2 lg:text-lg font-myfrida hover:text-dark-blue">Profile</a>
-                  </li>
-                  <li>
-                    <a href="#" onClick={logoutHandler} class="block lg:inline-block text-md ml-2 lg:text-lg font-myfrida hover:text-dark-blue">Logout</a>
-                  </li>
-                </ul>
-            
-              </div>
-              )}
-             
-            </>
-          ) : (
-            <>
-              <a href='/register' class="p-1 px-4 mb-2 lg:mb-0 font-myfrida text-white bg-dark-blue rounded-full baseline hover:bg-light-blue ">
-                BECOME A MEMBER
-              </a>
-              <a href='/login' class="p-1 px-4  font-myfrida text-white bg-light-blue rounded-full baseline hover:bg-dark-blue ">
-                LOGIN
-              </a>
-            </>
-          )}
+          </button>
+          <div id="mega-menu-full" class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1">
+            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:mt-0 lg:space-x-8 rtl:space-x-reverse">
+              <li>
+                  <a href="/" class="block lg:inline-block first-letter text-lg font-myfrida hover:text-dark-blue" aria-current="page">HOME</a>
+              </li>
+              <li>
+                <a href="/events" class="block lg:inline-block text-lg font-myfrida hover:text-dark-blue ">EVENTS</a>
+              </li>
+              <li>
+                <a href="/circles-of-trust" class="block lg:inline-block text-lg font-myfrida hover:text-dark-blue ">CIRCLES</a>
+              </li>
+              <li>
+                <a href="/partner" class="block lg:inline-block text-lg font-myfrida hover:text-dark-blue ">EVENT PATNERSHIPS</a>
+              </li>
+              <li>
+                <a href="/join-the-movement" class="block lg:inline-block text-lg font-myfrida hover:text-dark-blue ">JOIN THE MOVEMENT</a>
+              </li>
+              <li>
+                <a href="https://candidbusinesswomen.co.ke/book/" class="block lg:inline-block text-lg font-myfrida hover:text-dark-blue ">CANDID BOOK</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+    </nav>
     </>
   )
 }
