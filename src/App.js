@@ -14,6 +14,8 @@ import Meru from './components/Meru';
 import Machakos from './components/Machakos';
 import Kiambu from './components/Kiambu';
 import Uganda from './components/Uganda';
+import Events from './components/Events';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/meru" element={<Meru />} />
         <Route path="/machakos" element={<Machakos />} />
         <Route path="/kiambu" element={<Kiambu />} />
