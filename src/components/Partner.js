@@ -1,191 +1,117 @@
 import React from 'react'
 import img2 from '../media/icon.png'
-import banner from '../media/circles/banner4.jpg'
-import img3 from '../media/images/img7.jpg'
-import img5 from '../media/images/img21.JPG'
-import img6 from '../media/images/img5.jpg'
-import img7 from '../media/images/img11.jpg'
-import img10 from '../media/sponsor/img3.JPG'
-import img11 from '../media/sponsor/img4.jpg'
-import img14 from '../media/sponsor/img7.jpg'
-import img15 from '../media/sponsor/img8.jpg'
-import img18 from '../media/sponsor/img11.JPG'
-import img19 from '../media/sponsor/img12.JPG'
-import img20 from '../media/sponsor/img13.JPG'
+import img3 from  '../media/kampala/53148010670_3f64234747_c.jpg'
+import video1 from '../media/video/ig.mp4'
 
 const Partner = () => {
   return (
     <div>
-        <section id='Hero'  class="mt-[20%] lg:mt-[7%]">
-            <section class="bg-center bg-no-repeat bg-[url('https://candid-backend.s3.amazonaws.com/banner/img2.jpg')] bg-gray-400 bg-blend-multiply bg-cover h-[50vh] lg:h-[70vh]">
-                <div class="flex flex-col space-y-5 md:absolute md:mb-10 pt-36  md:top-1/2 lg:top-1/3 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+        <section >
+            <section class="bg-center bg-no-repeat bg-[url('/home/stella/Documents/projects/Candid/candid-v2/candid-v2/src/media/kampala/53147000502_a90ce9918d_c.jpg')] bg-gray-400 bg-blend-multiply bg-cover">
+                <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-indigo font-myriad md:text-5xl lg:text-7xl">CANDID PARTNERSHIPS </h1>
+                    
                 </div>
-            </section>
+            </section>       
         </section>
-        <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
-            HOW TO JOIN AS A RETAILER
+        <h5 class="pt-4 font-bold text-center font-myriad text-dark-blue text-2xl md:text-4xl mt-6 md:my-6">
+            EVENT PARTNERSHIPS
         </h5>
-        <div class="flex flex-col container mx-auto space-x-2">
-            <p class="text-gray pt-4 text-left mx-4 md:mx-10 md:text-xl font-myriad">
-            The retailer position will be initially open to members of Candid Conversations. 
-            The products or services on sale have to be strictly Kenyan sourced and made. 
-            The benefit of signing up as a retailer include, but are not limited to:
-            </p>
-            <br></br>
-            <div class="flex flex-col space-y-6 ml-6 md:w-3/4">
-                {/* list Item 1 */}
-                <div class="flex flex-col space-y-3 md:space-y-0 mx-4 md:space-x-6 md:flex-row">
+        <div className='grid grid-cols-1 mb-4 lg:grid-cols-2'>
+            <div className='mx-4 max-w-4xl mt-4'>               
+                <h5 class="pt-4 font-bold text-center font-myriad text-dark-blue text-3xl">
+                    JOIN AS A SPONSOR
+                </h5>
+                <p class="text-gray pt-4 text-left mx-4 md:mx-10 text-2xl font-myriad">
+                Through sponsorship or partnership with Candid Conversations, a company or individual has an opportunity to market or expand their customer base via the extensive membership reach. 
+                </p>
+                <p class="text-gray pt-2 text-left mx-4 md:mx-10 text-2xl font-myriad">
+                As a sponsor the benefits include, but are not limited to: 
+                </p>
+                <div class="flex flex-col space-y-3 mx-2 md:mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
                 {/* Heading */}
                     <div class="rounded-l-full ">
                         <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Opportunity to have their products/services showcased on the official website for members to purchase.
-                            </p>
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        Placement of your logo on all Candid Conversations’ branded materials
+                        </p>
                         </div>
-                    </div>                
+                    </div>                 
                 </div>
-                {/* list Item 2 */}
-                <div class="flex flex-col space-y-3 md:space-y-0 mx-4 md:space-x-6 md:flex-row">
+                <div class="flex flex-col space-y-3 mx-2 md:mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
                 {/* Heading */}
                     <div class="rounded-l-full ">
                         <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            An opportunity to have a display/exhibition table during one event in their region
-                            </p>
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        The option to place an advert or article in the Kayana Create magazine, Kayana News and the Candid newsletter.
+                        </p>
                         </div>
-                    </div>                
+                    </div>                 
                 </div>
-                {/* list Item 3 */}
-                <div class="flex flex-col space-y-3 md:space-y-0 mx-4 md:space-x-6 md:flex-row">
+                <div class="flex flex-col space-y-3  mx-4 md:mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
                 {/* Heading */}
                     <div class="rounded-l-full ">
                         <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Inclusion into the Kayana Verified list of vendors and a feature on the Kenya Cottage Industry Website
-                            </p>
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        A panelist slot at one event, in the region of your choice
+                        </p>
                         </div>
-                    </div>                
+                    </div>                 
                 </div>
-                {/* list Item 4 */}
-                <div class="flex flex-col space-y-3 md:space-y-0 mx-4 md:space-x-6 md:flex-row">
+                <div class="flex flex-col space-y-3 mx-2 md:mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
                 {/* Heading */}
                     <div class="rounded-l-full ">
                         <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Posts of their products or services on the official Candid conversations social media pages
-                            </p>
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        Opportunity to showcase your products/service on the display screens during the event
+                        </p>
                         </div>
-                    </div>                
+                    </div>                 
                 </div>
-             </div>
-        </div>
-        {/* <div class="container mx-auto mt-6 flex flex-col lg:flex-row">
-            <div class="mr-2 mb-2">
-                <img class="h-auto max-w-full rounded-lg" src={img3} alt=""/>
+                <div class="flex flex-col space-y-3 mx-2 md:mx-10 my-4 md:space-y-0 md:space-x-6 md:flex-row">
+                {/* Heading */}
+                    <div class="rounded-l-full ">
+                        <div class="flex items-center space-x-2">
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        Display/exhibition table at the event networking space for you to interact with the attendees of the event during the networking sessions.
+                        </p>
+                        </div>
+                    </div>                 
+                </div>
+                <div class="flex flex-col space-y-3 mx-2 md:mx-10 mt-4 md:space-y-0 md:space-x-6 md:flex-row">
+                {/* Heading */}
+                    <div class="rounded-l-full ">
+                        <div class="flex items-center space-x-2">
+                        <img src={img2} class="h-6 w-6 ml-2"/>
+                        <p class="text-gray text-xl">
+                        Placement of logo or advert on the candid website sponsor’s panel
+                        </p>
+                        </div>
+                    </div>                 
+                </div>
+                <div class="flex flex-col space-y-4 mx-2 mt-4 justify-center md:mx-10 sm:flex-row sm:space-y-0">
+                    <a href="#" class="inline-flex justify-center font-myfrida items-center py-3 px-5 mx-10 md:mx-0 text-lg font-medium text-center rounded-lg bg-light-blue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    join as a partner
+                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="mr-2 mb-2">
-                <img class="h-auto max-w-full rounded-lg" src={img5} alt=""/>
-            </div>
-            <div class="mr-2 mb-2">
-                <img class="h-auto max-w-full rounded-lg" src={img6} alt=""/>
-            </div>
-            <div class="mr-2 mb-2">
-                <img class="h-auto max-w-full rounded-lg" src={img7} alt=""/>
-            </div>
-        </div> */}
-        <h5 class="pt-4 font-bold text-center font-myfrida text-light-blue text-3xl">
-            HOW TO JOIN AS A SPONSOR
-        </h5>
-        <div class="flex flex-col container mx-auto space-x-7">
-            <p class="text-gray pt-4 text-left mx-4 md:mx-10 md:text-xl font-myriad">
-            Through sponsorship or partnership with Candid Conversations, a company or individual has an opportunity to market or expand their customer base via the extensive membership reach. 
-            As a sponsor the benefits include, but are not limited to: 
-            {/* This will give your organization the opportunity to work with other organizations that are working to improve the lively hoods and working environments of women in their area of operation. */}
-            </p>
-            <br></br>
-            <div class="flex flex-col container space-y-6 ">
-                {/* list Item 1 */}
-                <div class="flex flex-col mr-9 space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Placement of your logo on all Candid Conversations’ branded materials
-                            </p>
-                        </div>
-                    </div>                
-                </div>
-                {/* list Item 2 */}
-                <div class="flex flex-col space-y-3 mr-9 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            The option to place an advert or article in the Kayana Create magazine, Kayana News and the Candid newsletter.
-                            </p>
-                        </div>
-                    </div>                
-                </div>
-                {/* list Item 3 */}
-                <div class="flex flex-col space-y-3 mr-9 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            A speaking slot at one event, in the region of your choice
-                            </p>
-                        </div>
-                    </div>                
-                </div>
-                {/* list Item 4 */}
-                <div class="flex flex-col space-y-3 mr-9 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Opportunity to showcase your products/service on the display screens during the event
-                            </p>
-                        </div>
-                    </div>                
-                </div>
-                {/* list Item 5 */}
-                <div class="flex flex-col space-y-3 mr-9 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Display/exhibition table at the event networking space for you to interact with the attendees of the event during the networking sessions.
-                            </p>
-                        </div>
-                    </div>                
-                </div>
-                {/* list Item 6 */}
-                <div class="flex flex-col space-y-3 mr-9 md:space-y-0 md:space-x-6 md:flex-row">
-                {/* Heading */}
-                    <div class="rounded-l-full ">
-                        <div class="flex items-center space-x-2">
-                            <img src={img2} class="h-6 w-6 lg:h-8 lg:w-8 ml-2"/>
-                            <p class="text-myriad  text-dark-blue">
-                            Placement of logo or advert on the candid website sponsor’s panel
-                            </p>
-                        </div>
-                    </div>                
-                </div>
+            <div className='flex md:justify-center mx-4 mt-10 md:mx-0 lg:mr-10 lg:mt-10 lg:h-1/2'>
+                
+                <video class="w-full" autoPlay muted controls loop>
+                <source src={video1} type="video/mp4"/>
+                Your browser does not support the video tag.
+                </video>
+
             </div>
         </div>
-
-       
-
-
     </div>
   )
 }
